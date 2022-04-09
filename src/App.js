@@ -1,15 +1,16 @@
-import { ThemeProvider } from "./context/ThemeProvider.js";
-import ThemeConsumer from "./context/ThemeConsumer.js";
-import MemoParent from "./memo/MemoParent";
+// import { ThemeProvider } from "./context/ThemeProvider.js";
+// import ThemeConsumer from "./context/ThemeConsumer.js";
+// import MemoParent from "./memo/MemoParent";
+import ReducerParent from "./reducer/ReducerParent.js";
 
 function App() {
     return (
         <div className="App">
-            <h3>App Component</h3>
-            <ThemeProvider>
-                <ThemeConsumer />
-                <MemoParent />
-            </ThemeProvider>
+            <ReducerParent />
+            {/* <ThemeConsumer /> */}
+            {/* <ThemeProvider> */}
+                {/* <MemoParent /> */}
+            {/* </ThemeProvider> */}
         </div>
     );
 }

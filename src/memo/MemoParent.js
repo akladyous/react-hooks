@@ -1,4 +1,4 @@
-import React, { useEffect, useState, memo, useCallback } from 'react'
+import React, { useEffect, useState, useCallback } from 'react'
 import {MemoizedComponent} from './MemoChild.js'
 export default function MemoParent() {
     const [fields, setFields] = useState([
