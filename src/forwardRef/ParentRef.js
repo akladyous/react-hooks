@@ -1,4 +1,4 @@
-import { useRef, createRef } from "react";
+import { useRef } from "react";
 import { InputField } from "../forwardRef/InputField.js"
 
 export default function ParentRef() {
@@ -8,13 +8,12 @@ export default function ParentRef() {
     };
 
     return (
-        <div className="container" ref={ref2}>
+        <div className="container" ref={ref}>
             <h3>Ref & forwardRef</h3>
             <div>
                 <InputField ref={ref} name="name" />
                 <button onClick={focus}>Focus</button>
             </div>
-            <button onClick={changeColor}>change div color</button>
         </div>
     );
 }

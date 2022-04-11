@@ -2,12 +2,12 @@
 // import ThemeConsumer from "./context/ThemeConsumer.js";
 // import MemoParent from "./memo/MemoParent";
 // import ReducerParent from "./reducer/ReducerParent.js";
-import ParentRef from "./forwardRef/ParentRef.js";
+// import ParentRef from "./forwardRef/ParentRef.js";
 
 function App() {
     return (
         <div className="App">
-            <ParentRef />
+            {/* <ParentRef /> */}
             {/* <ReducerParent /> */}
             {/* <ThemeConsumer /> */}
             {/* <ThemeProvider> */}
