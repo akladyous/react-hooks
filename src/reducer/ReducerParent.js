@@ -18,7 +18,7 @@ export default function ReducerParent() {
     const [state, dispatch] = useReducer(reducer, initialState);
 
     return (
-        <div>
+        <div className="container mt-2 border py-2">
             <h3>Counter</h3>
             <section>
                 <p>{state.count}</p>
