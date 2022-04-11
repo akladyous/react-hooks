@@ -1,5 +1,8 @@
 import { useReducer } from "react"
-
+const ACTION = {
+    INCREMENT: "increment",
+    DECREMENT: "decrement"
+}
 const initialState = {
     count: 0
 };
@@ -22,8 +25,8 @@ export default function ReducerParent() {
             <h3>Counter</h3>
             <section>
                 <p>{state.count}</p>
-                <button onClick={()=>{dispatch({type: 'increment'})}} >increment</button>
-                <button onClick={()=>{dispatch({type: 'decrement'})}} >decrement</button>
+                <button onClick={()=>{dispatch({type: ACTION.INCREMENT})}} >increment</button>
+                <button onClick={()=>{dispatch({type: ACTION.DECREMENT})}} >decrement</button>
             </section>
         </div>
     )

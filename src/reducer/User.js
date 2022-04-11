@@ -1,0 +1,56 @@
+import React, { useReducer } from "react";
+
+const ACTION = {
+    CHANGE_VALUE: "changeValue",
+    SUBMIT_FORM: "submitForm",
+};
+const initialState = {
+        first_name: "",
+        last_name: "",
+        phone_number: "",
+        email: "",
+};
+
+const reducer = (state, action) => {
+    switch (action.type) {
+        case ACTION.CHANGE_VALUE:
+            return { ...state, [action.field]: action.payload };
+        case ACTION.SUBMIT_FORM: {
+            console.log(state)
+            break
+        }
+        default:
+            return state;
+    };
+};
+
+export default function User() {
+    const [state, dispatch] = useReducer(reducer, initialState);
+
+    return (
+        <div className="container border mt-5 w-25">
+            <div className="w-100 p-3  border my-2 container">
+                {
+                    Object.keys(initialState).map( (field, index) => {
+                        return (
+                            <div className="input-group mb-1" key={`div${index}`}>
+                                <input
+                                    type="text"
+                                    name={field}
+                                    key={`${field}${index}`}
+                                    value={state[field]}
+                                    onChange={ (e) => dispatch({ type: ACTION.CHANGE_VALUE, field: field, payload: e.target.value, })}
+                                    className="form-control"
+                                    placeholder={field.split('_').join(' ')}
+                                ></input>
+                            </div>
+                        );
+                    })
+                }
+                <button type="submit" className="btn btn-primary" onClick={()=> dispatch({type: ACTION.SUBMIT_FORM})}>
+                    Submit
+                </button>
+            </div>
+        </div>
+    );
+}
