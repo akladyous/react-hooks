@@ -1,26 +1,28 @@
 import React, { useReducer } from "react";
 
+const initialState = {
+    first_name: "",
+    last_name: "",
+    phone_number: "",
+    email: "",
+};
+
 const ACTION = {
     CHANGE_VALUE: "changeValue",
     SUBMIT_FORM: "submitForm",
 };
-const initialState = {
-        first_name: "",
-        last_name: "",
-        phone_number: "",
-        email: "",
-};
+
 
 const reducer = (state, action) => {
     switch (action.type) {
         case ACTION.CHANGE_VALUE:
             return { ...state, [action.field]: action.payload };
         case ACTION.SUBMIT_FORM: {
-            console.log(state)
-            break
+            console.log("state: ", state)
         }
+        // eslint-disable-next-line no-fallthrough
         default:
-            return state;
+            return state
     };
 };
 
